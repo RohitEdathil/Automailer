@@ -6,6 +6,6 @@ class MailClient():
         """Takes in email and password and logs into the server"""
         pass
 
-    def send(to: str, subject: str, content: str) -> None:
+    def send(self, to: str, subject: str, content: str) -> None:
         """Sends an email to the specified address"""
         pass
