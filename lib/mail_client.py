@@ -1,11 +1,16 @@
-
 class MailClient():
-    """MailClient provides an easy to use interface to send emails."""
+    import smtplib,ssl
 
-    def __init__(self, email: str, password: str) -> None:
-        """Takes in email and password and logs into the server"""
-        pass
+    def __init__(self, email: str, password: str, server: str):
+        self.email = email
+        self.password = password
+        port = 465
+        self.server = server
+        context = ssl.create_default_context()
+        with smtplib.SMTP_SSL(sel.server, port, context=context) as server:
+            server.login(self.email, self.password)
 
-    def send(self, to: str, subject: str, content: str) -> None:
-        """Sends an email to the specified address"""
-        pass
+    def send(self, to: str, subject: str, content: str):
+        self.to = to
+        self.content = content
+        server.sendmail(self.email, self.to, self.content)
