@@ -5,11 +5,12 @@ from lib.mail_client import MailClient
 from lib.renderer import TemplateRenderer
 from lib.parser import parse
 from os.path import join
+from tqdm import tqdm
 
 
 @click.group()
 def app():
-    """Utility to send bulk personalized emails"""
+    """Utility to send bulk personalized emails."""
     pass
 
 
@@ -54,7 +55,7 @@ def run(job, data_file):
 
         # Processes data and send emails
         headers, data = parse(csv_path)
-        for row in data:
+        for row in tqdm(data, desc='Sending emails'):
             email_data = dict(zip(headers, row))
             content = renderer.render(email_data)
             mail_client.send(email_data['email'],
