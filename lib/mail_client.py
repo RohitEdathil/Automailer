@@ -1,6 +1,5 @@
 class MailClient():
- 
-
+  
   def __init__(self, email: str, password: str):
     import yagmail
     self.email = email
@@ -15,3 +14,4 @@ class MailClient():
     self.subject = subject
     self.content = content
     yag.send(self.to, self.subject, self.content)
+
