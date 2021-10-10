@@ -1,4 +1,11 @@
-# Automailer
+# <div align="center"> Automailer </div>
+<div align="center"> Project by TEAM 1 for PROJECTARO conducted by CSI GECBH </div>
+
+## Team Members
+- Rohit V
+- Gokul Krishnan K P
+- Amrita Jiju
+- Anamika R S
 
 Utility to send emails using an HTML template by filling it with data from a CSV file.
 
